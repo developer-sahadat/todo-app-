@@ -1,12 +1,25 @@
 import React from "react";
 import Header from "./Header";
+import { toast } from "react-toastify";
 
 const AddTask = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const description = e.target.description.value;
-    console.log(name, description);
+
+    fetch("https://pure-sands-03506.herokuapp.com/task", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        description,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => toast("successful added"));
   };
 
   return (

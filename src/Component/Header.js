@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./style/Header.css";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import auth from "./firebaseInit";
 
 const Header = () => {
   return (
@@ -21,7 +23,9 @@ const Header = () => {
                 Add Task
               </Link>
             </Nav>
-            <button className="signOut">Sign Out</button>
+            <button onClick={() => signOut(auth)} className="signOut">
+              Sign Out
+            </button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
