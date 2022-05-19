@@ -1,0 +1,16 @@
+.link_nav {
+  margin: 10px 20px;
+
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.signOut {
+  padding: 13px 35px;
+  margin-left: 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+}
